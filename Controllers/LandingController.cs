@@ -66,18 +66,6 @@ namespace CSCI4927_Gainers.Controllers
             return View(user);
         }
 
-        /**       [HttpPost]
-               public IActionResult Register(User newUser)
-               {
-                   if (ModelState.IsValid)
-                   {
-                       _userRepo.Create(newUser);
-                       return RedirectToAction("Index", "Home", new { Id = newUser.Id });
-                   }
-                   return View(newUser);
-               }**/
-
-
         // GET: LandingController/Details/5
         public ActionResult Details(int id)
         {

@@ -10,11 +10,13 @@ namespace CSCI4927_Gainers.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IUserRepository _userRepo;
+        private readonly IMatchRepository _matchRepo;
 
-        public HomeController(ILogger<HomeController> logger, IUserRepository userRepo)
+        public HomeController(ILogger<HomeController> logger, IUserRepository userRepo, IMatchRepository matchRepo)
         {
             _logger = logger;
             _userRepo = userRepo;
+            _matchRepo = matchRepo;
         }
 
         public IActionResult Index(int userId)

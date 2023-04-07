@@ -1,10 +1,19 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CSCI4927_Gainers.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CSCI4927_Gainers.Controllers
 {
     public class MessagesController : Controller
     {
+        private readonly IUserRepository _userRepo;
+        private readonly IMessageRepository _messageRepo;
+
+        public MessagesController(IUserRepository userRepo, IMessageRepository messageRepo)
+        {
+            _userRepo = userRepo;
+            _messageRepo = messageRepo;
+        }
         // GET: MessagesController
         public ActionResult Index()
         {

@@ -1,10 +1,18 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CSCI4927_Gainers.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CSCI4927_Gainers.Controllers
 {
     public class ProfileController : Controller
     {
+        private readonly IUserRepository _userRepo;
+
+        public ProfileController(IUserRepository userRepo)
+        {
+            _userRepo = userRepo;
+        }
+
         // GET: ProfileController
         public ActionResult Index()
         {
