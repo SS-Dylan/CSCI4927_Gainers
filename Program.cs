@@ -10,6 +10,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
+builder.Services.AddScoped<IUserRepository, DbUserRepository>();
+builder.Services.AddScoped<IMatchRepository, DbMatchRepository>();
+builder.Services.AddScoped<IMessageRepository, DbMessageRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -30,6 +34,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{userId?}");
 
 app.Run();

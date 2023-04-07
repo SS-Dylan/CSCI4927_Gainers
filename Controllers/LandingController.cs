@@ -1,10 +1,20 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CSCI4927_Gainers.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using CSCI4927_Gainers.Models.Entities;
 
 namespace CSCI4927_Gainers.Controllers
 {
     public class LandingController : Controller
     {
+        private readonly IUserRepository _userRepo;
+
+        public LandingController(IUserRepository userRepo)
+        {
+            _userRepo = userRepo;
+        }
+
         // GET: LandingController
         public ActionResult Index()
         {
@@ -19,6 +29,53 @@ namespace CSCI4927_Gainers.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Register(User newUser)
+        {
+            if (ModelState.IsValid)
+            {
+                _userRepo.Create(newUser);
+                return RedirectToAction("Index", "Home", new { userId = newUser.Id });
+            }
+            return View(newUser);
+        }
+
+        [HttpPost]
+        public IActionResult Login(User user)
+        {
+            var users = _userRepo.ReadAll();
+            foreach (var _user in users)
+            {
+                if(user.Email == _user.Email)
+                {
+                    if(user.Password == _user.Password)
+                    {
+                        return RedirectToAction("Index", "Home", new { userId = _user.Id });
+                    }
+                    else
+                    {
+                        // Valid email but incorrect password
+                    }
+                }
+                else
+                {
+                    // No user with email found
+                }
+            }
+            return View(user);
+        }
+
+        /**       [HttpPost]
+               public IActionResult Register(User newUser)
+               {
+                   if (ModelState.IsValid)
+                   {
+                       _userRepo.Create(newUser);
+                       return RedirectToAction("Index", "Home", new { Id = newUser.Id });
+                   }
+                   return View(newUser);
+               }**/
 
 
         // GET: LandingController/Details/5
