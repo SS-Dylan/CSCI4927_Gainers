@@ -32,4 +32,22 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
+<style>
+    .centered-footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px; /* adjust the height as needed */
+        background-color: #f2f2f2; /* add a background color for visibility */
+    }
+</style>
+
+<footer class="centered-footer">
+    <p>&copy; Gainers</p>
+</footer>
+
 </html>
