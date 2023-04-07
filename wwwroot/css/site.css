@@ -51,6 +51,57 @@ nav {
     width: 500px;
 }
 
+#matchesMainContent {
+    background-color: rgb(42, 134, 255);
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+}
+#matchesMainContent {
+    background-color: rgb(42, 134, 255);
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+}
+
+
+#matchesTableHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(42, 134, 255);
+    width: 500px;
+    max-width: 100%;
+}
+.profileNav {
+    background-color: #ffcba4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.secondaryNav {
+    background-color: #cfe4ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#matchesTableHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(42, 134, 255);
+    width: 500px;
+    max-width: 100%;
+}
+
 #profilePictureHolder {
     margin-left: auto;
     margin-right: auto;
