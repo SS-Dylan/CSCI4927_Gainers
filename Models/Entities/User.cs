@@ -1,4 +1,6 @@
-﻿namespace CSCI4927_Gainers.Models
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace CSCI4927_Gainers.Models.Entities
 {
     public class User
     {
