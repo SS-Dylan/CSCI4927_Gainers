@@ -1,14 +1,10 @@
 ﻿@model CSCI4927_Gainers.Models.Entities.User
 
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "Gainer - Register";
 }
 
-<h1>Register</h1>
-
-<h4>User</h4>
-<hr />
-<div class="row">
+<!--<div class="row register-form">
     <div class="col-md-4">
         <form asp-action="Register">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -63,8 +59,95 @@
         </form>
     </div>
 </div>
+-->
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+<form asp-action="Register">
+  <div class="form-row align-items-center register-form">
+    <h3 style="font-family:'Inter';font-weight:600;text-align:center;">Create Account</h3>
+    <div class="col-auto">
+      <label class="sr-only" asp-for="FirstName">First name</label>
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text"><i class="fas fa-user"></i></div>
+        </div>
+        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="First Name" asp-for="FirstName">
+      </div>
+    </div>
+    <div class="col-auto">
+        <label class="sr-only" asp-for="LastName">Last name</label>
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fas fa-user"></i></div>
+            </div>
+            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Last Name" asp-for="LastName">
+        </div>
+    </div>
+    <div class="col-auto">
+        <label class="sr-only" asp-for="Email">Email</label>
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fas fa-envelope"></i></div>
+            </div>
+            <input type="email" class="form-control" id="inlineFormInputGroup" placeholder="Email" asp-for="Email">
+        </div>
+    </div>
+    <div class="col-auto">
+        <label class="sr-only" asp-for="Password">Password</label>
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fas fa-key"></i></div>
+            </div>
+            <input type="password" class="form-control" id="inlineFormInputGroup" placeholder="Password" asp-for="Password">
+        </div>
+    </div>
+    <div class="col-auto">
+        <label class="sr-only" asp-for="ProfilePictureUrl">Profile Picture URL</label>
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fas fa-portrait"></i></div>
+            </div>
+            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Profile Picture URL" asp-for="ProfilePictureUrl">
+        </div>
+    </div>
+    <div class="col-auto">
+        <label class="sr-only" asp-for="Squats">Squats</label>
+        <div class="input-group mb-2 small-input">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fas fa-dumbbell"></i></div>
+            </div>
+            <input type="number" class="form-control" id="inlineFormInputGroup" placeholder="Squats" asp-for="Squats">
+        </div>
+    </div>
+    <div class="col-auto">
+        <label class="sr-only" asp-for="Bench">Bench</label>
+        <div class="input-group mb-2 small-input">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fas fa-dumbbell"></i></div>
+            </div>
+            <input type="number" class="form-control small-input" id="inlineFormInputGroup" placeholder="Bench" asp-for="Bench">
+        </div>
+    </div>
+    <div class="col-auto">
+        <label class="sr-only" asp-for="Deadlift">Deadlift</label>
+        <div class="input-group mb-2 small-input">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fas fa-dumbbell"></i></div>
+            </div>
+            <input type="number" class="form-control" id="inlineFormInputGroup" placeholder="Deadlift" asp-for="Deadlift">
+        </div>
+    </div>
+    <div class="col-auto">
+        <label class="sr-only" asp-for="Bio">Bio</label>
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fas fa-list"></i></div>
+            </div>
+            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Bio" asp-for="Bio">
+        </div>
+    </div>
+    <div class="col-auto" style="text-align:center;">
+      <button type="submit" value="Create" class="btn btn-success mb-2">Register</button>
+    </div>
+  </div>
+</form>
 

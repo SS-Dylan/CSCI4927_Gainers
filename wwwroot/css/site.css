@@ -134,3 +134,24 @@ nav {
     .homeButtonOption:not(:first-child) {
         margin-left: 100px;
     }
+
+.register-form {
+    background-color: #f8f8f8;
+    border: 1px solid black;
+    border-radius: 2%;
+    width: 35rem;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+.input-group-text {
+    display: block;
+    background: rgb(106, 171, 255);
+    color:ghostwhite;
+}
+
+.small-input {
+    width:150px;
+}
