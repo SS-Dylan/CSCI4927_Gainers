@@ -1,0 +1,32 @@
+﻿@model CSCI4927_Gainers.Models.Entities.User
+
+@{
+    ViewData["Title"] = "Gainer - Login";
+}
+
+<form asp-action="Login">
+    <div class="form-row align-items-center register-form">
+        <h3 style="font-family:'Inter';font-weight:600;text-align:center;">Login</h3>
+        <div class="col-auto">
+            <label class="sr-only" asp-for="Email">Email</label>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fas fa-envelope"></i></div>
+                </div>
+                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Email" asp-for="Email">
+            </div>
+        </div>
+        <div class="col-auto">
+            <label class="sr-only" asp-for="Password">Password</label>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fas fa-key"></i></div>
+                </div>
+                <input type="password" class="form-control" id="inlineFormInputGroup" placeholder="Password" asp-for="Password">
+            </div>
+        </div>
+        <div class="col-auto" style="text-align:center;">
+            <button type="submit" value="Login" class="btn btn-success mb-2">Login</button>
+        </div>
+    </div>
+</form>

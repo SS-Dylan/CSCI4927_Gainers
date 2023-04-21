@@ -1,20 +1,38 @@
 ﻿using CSCI4927_Gainers.Models;
+using CSCI4927_Gainers.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using CSCI4927_Gainers.Models.Entities;
 
 namespace CSCI4927_Gainers.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IUserRepository _userRepo;
+        private readonly IMatchRepository _matchRepo;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IUserRepository userRepo, IMatchRepository matchRepo)
         {
             _logger = logger;
+            _userRepo = userRepo;
+            _matchRepo = matchRepo;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int userId)
         {
+            if(userId == 0)
+            {
+                return RedirectToAction("Index", "Landing");
+            }
+            else
+            {
+                User user = _userRepo.Read(userId);
+                if(user == null)
+                {
+                    return RedirectToAction("Index", "Landing");
+                }
+            }
             return View();
         }
 

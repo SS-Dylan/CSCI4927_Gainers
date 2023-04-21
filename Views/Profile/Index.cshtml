@@ -1,0 +1,57 @@
+@model CSCI4927_Gainers.Models.Entities.User
+
+@{
+    ViewData["Title"] = "Gainer - Profile";
+}
+
+<nav class="profileNav">
+    <div class="profileHolder">
+        <span class="profileText">Profile</span>
+    </div>
+</nav>
+
+<div class="container-fluid p-5">
+    <div class="row p-1">
+        <div class="col-sm-7">
+            <div id="profileFill">
+                <div class="">
+                    <img class="largeProfilePicture" id="homeLargeProfilePicture" src="@Model?.ProfilePictureUrl" />
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3" id="profileRow">
+            <div class="row p-2">
+                <form asp-action="UpdateSquats" method="post">
+                    <input type="hidden" name="Id" value="@Model?.Id" />
+                    <div class="p-3" style="background-color:#ffcba4;">
+                        Squat: <input type="number" name="Squats" value="@Model?.Squats" /> <button type="submit">Save</button>
+                    </div>
+                </form>
+            </div>
+            <div class="row p-2">
+                <form asp-action="UpdateBench" method="post">
+                    <input type="hidden" name="Id" value="@Model?.Id" />
+                    <div class="p-3" style="background-color:#ffcba4;">
+                        Bench: <input type="number" name="Bench" value="@Model?.Bench" /> <button type="submit">Save</button>
+                    </div>
+                </form>
+            </div>
+            <div class="row p-2">
+                <form asp-action="UpdateDeadlift" method="post">
+                    <input type="hidden" name="Id" value="@Model?.Id" />
+                    <div class="p-3" style="background-color:#ffcba4;">
+                        Deadlift: <input type="number" name="Deadlift" value="@Model?.Deadlift" /> <button type="submit">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row p-3" style="background-color: #cfe4ff; ">
+        <h4>BIO</h4>
+    </div>
+    <div class="row p-3">
+        <form asp-action="UpdateBio" method="post">
+            <textarea name="Bio">@Model?.Bio</textarea> <button type="submit">Save</button>
+        </form>
+    </div>
+</div>
